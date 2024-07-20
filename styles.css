@@ -1,0 +1,109 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 7rem;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.card {
+  width: 500px;
+  background: #fff480;
+  color: black;
+  position: relative;
+  border-radius: 2.5em;
+  padding: 2em;
+  transition: transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2em;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease;
+}
+
+#instruction-text {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+#puzzle-container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 2px;
+  margin: auto;
+}
+
+.puzzle-piece {
+  width: 100px;
+  height: 100px;
+  background-size: 300px 300px;
+  cursor: pointer;
+}
+
+button {
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: hsl(255deg 50% 40%);
+  border: solid 4px hsl(50deg 100% 50%);
+  font-family: inherit;
+}
+
+.default-btn, .hover-btn {
+  background-color: hsl(255deg 50% 40%);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  border-radius: 50px;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all .3s ease;
+}
+
+.hover-btn {
+  position: absolute;
+  inset: 0;
+  background-color: hsl(255deg 50% 49%);
+  transform: translate(0%, 100%);
+}
+
+.default-btn span {
+  color: hsl(0, 0%, 100%);
+}
+
+.hover-btn span {
+  color: hsl(50deg 100% 50%);
+}
+
+button:hover .default-btn {
+  transform: translate(0%, -100%);
+}
+
+button:hover .hover-btn {
+  transform: translate(0%, 0%);
+}
+
+#shuffle-btn {
+  align-self: center;
+}
